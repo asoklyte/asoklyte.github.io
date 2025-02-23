@@ -1,60 +1,49 @@
-import React, { useState } from "react";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Short tagline or description of who you are</p>
+    </header>
 
-const sections = [
-  { name: "Work Experience", details: "Your professional history here." },
-  { name: "Education", details: "Your academic background here." },
-  { name: "Hobbies", details: "Your interests and activities." },
-  { name: "Soft Skills", details: "Your personal and interpersonal skills." },
-  { name: "Tech Skills", details: "Your technical abilities and expertise." },
-  { name: "Passion Projects", details: "Your side projects and contributions." },
-];
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <!-- Timeline Content Goes Here -->
+    </section>
 
-export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState(null);
-
-  return (
-    <div className="min-h-screen flex flex-col items-center p-6 bg-gray-100">
-      {/* Tagline */}
-      <h1 className="text-4xl font-bold mt-10">Welcome to My Portfolio</h1>
-      <p className="text-gray-600 mt-2">A snapshot of my work, skills, and interests.</p>
-
-      {/* Section Tabs */}
-      <div className="mt-10 grid grid-cols-3 gap-4 w-full max-w-4xl">
-        {sections.map((section, index) => (
-          <motion.div
-            key={index}
-            className="p-4 bg-white rounded-xl shadow-md text-center cursor-pointer hover:bg-gray-200"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setActiveTab(index)}
-          >
-            {section.name}
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Tab Content */}
-      {activeTab !== null && (
-        <motion.div
-          className="mt-6 p-6 bg-white rounded-xl shadow-md max-w-2xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <h2 className="text-2xl font-bold">{sections[activeTab].name}</h2>
-          <p className="text-gray-600 mt-2">{sections[activeTab].details}</p>
-        </motion.div>
-      )}
-
-      {/* Contact Links */}
-      <footer className="mt-10 flex gap-6 text-2xl">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="text-blue-600 hover:text-blue-800" />
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-          <FaInstagram className="text-pink-600 hover:text-pink-800" />
-        </a>
-      </footer>
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <a href="#" class="tab-link" onclick="showContent('work')">Work Experience</a>
+        <a href="#" class="tab-link" onclick="showContent('education')">Education</a>
+        <a href="#" class="tab-link" onclick="showContent('skills')">Skills</a>
     </div>
-  );
-}
+
+    <div id="work" class="content-section">
+        <h2>Work Experience</h2>
+        <p>Details about your work experience.</p>
+    </div>
+
+    <div id="education" class="content-section">
+        <h2>Education</h2>
+        <p>Details about your education.</p>
+    </div>
+
+    <div id="skills" class="content-section">
+        <h2>Skills</h2>
+        <p>Details about your skills.</p>
+    </div>
+
+    <footer>
+        <!-- Optional: CTA or contact info -->
+        <p>Want a portfolio like this? Get in touch!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
