@@ -9,86 +9,120 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Portfolio</div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#work">Work Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#tech">Technical Skills</a></li>
-                <li><a href="#soft">Soft Skills</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#projects">Passion Projects</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="work">Work Experience</button>
+            <button class="tab-btn" data-tab="tech">Technical Skills</button>
+            <button class="tab-btn" data-tab="projects">Passion Projects</button>
+            <button class="tab-btn" data-tab="education">Education</button>
+            <button class="tab-btn" data-tab="soft">Soft Skills</button>
+            <button class="tab-btn" data-tab="hobbies">Hobbies</button>
+        </nav>
 
-    <header class="hero">
-        <h1 class="tagline">This is the best CV you will ever encounter</h1>
-        <p class="subtext">and I made it myself*</p>
-    </header>
+        <div class="tab-content">
+            <section id="work" class="tab-section active">
+                <h2>Work Experience</h2>
+                <div class="content-card">
+                    <h3>Senior Developer at Amazing Corp</h3>
+                    <p>Led development of enterprise applications</p>
+                    <h3>Tech Lead at Incredible Inc</h3>
+                    <p>Managed team of 5 developers on client projects</p>
+                    <h3>Full-stack Developer at Dream Team</h3>
+                    <p>Built responsive web applications using modern tech stack</p>
+                </div>
+            </section>
 
-    <main class="container">
-        <div class="tabs-container">
-            <div class="row">
-                <div class="tab" data-section="work">
-                    <h3>Work Experience</h3>
-                    <div class="preview">
-                        <p>Senior Developer at Amazing Corp<br>
-                        Tech Lead at Incredible Inc<br>
-                        Full-stack Developer at Dream Team</p>
+            <section id="tech" class="tab-section">
+                <h2>Technical Skills</h2>
+                <div class="content-card">
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <p>JavaScript • Python • React</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Backend & Database</h3>
+                        <p>Node.js • MongoDB • AWS</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>DevOps</h3>
+                        <p>Docker • Git • CI/CD</p>
                     </div>
                 </div>
-                <div class="tab" data-section="tech">
-                    <h3>Technical Skills</h3>
-                    <div class="preview">
-                        <p>JavaScript • Python • React<br>
-                        Node.js • MongoDB • AWS<br>
-                        Docker • Git • CI/CD</p>
+            </section>
+
+            <section id="projects" class="tab-section">
+                <h2>Passion Projects</h2>
+                <div class="content-card">
+                    <div class="project">
+                        <h3>AI Music Generator</h3>
+                        <p>Neural network-based music composition tool</p>
+                    </div>
+                    <div class="project">
+                        <h3>Smart Home System</h3>
+                        <p>IoT-based home automation platform</p>
+                    </div>
+                    <div class="project">
+                        <h3>Portfolio Website</h3>
+                        <p>This responsive portfolio showcase</p>
                     </div>
                 </div>
-                <div class="tab" data-section="projects">
-                    <h3>Passion Projects</h3>
-                    <div class="preview">
-                        <p>AI Music Generator<br>
-                        Smart Home System<br>
-                        Portfolio Website</p>
+            </section>
+
+            <section id="education" class="tab-section">
+                <h2>Education</h2>
+                <div class="content-card">
+                    <div class="education-item">
+                        <h3>MSc Computer Science</h3>
+                        <p>Advanced algorithms and software architecture</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>BSc Software Engineering</h3>
+                        <p>Foundation in software development principles</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Various Certifications</h3>
+                        <p>AWS, Google Cloud, and more</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="tab" data-section="education">
-                    <h3>Education</h3>
-                    <div class="preview">
-                        <p>MSc Computer Science<br>
-                        BSc Software Engineering<br>
-                        Various Certifications</p>
+            </section>
+
+            <section id="soft" class="tab-section">
+                <h2>Soft Skills</h2>
+                <div class="content-card">
+                    <div class="skill-group">
+                        <h3>Leadership & Communication</h3>
+                        <p>Team management and clear communication</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Problem Solving & Teamwork</h3>
+                        <p>Analytical thinking and collaborative approach</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Time Management</h3>
+                        <p>Efficient project delivery and organization</p>
                     </div>
                 </div>
-                <div class="tab" data-section="soft">
-                    <h3>Soft Skills</h3>
-                    <div class="preview">
-                        <p>Leadership • Communication<br>
-                        Problem Solving • Teamwork<br>
-                        Time Management</p>
+            </section>
+
+            <section id="hobbies" class="tab-section">
+                <h2>Hobbies</h2>
+                <div class="content-card">
+                    <div class="hobby">
+                        <h3>Photography & Gaming</h3>
+                        <p>Creative expression through visual arts</p>
+                    </div>
+                    <div class="hobby">
+                        <h3>Playing Guitar</h3>
+                        <p>Musical exploration and composition</p>
+                    </div>
+                    <div class="hobby">
+                        <h3>Mountain Biking</h3>
+                        <p>Adventure and outdoor activities</p>
                     </div>
                 </div>
-                <div class="tab" data-section="hobbies">
-                    <h3>Hobbies</h3>
-                    <div class="preview">
-                        <p>Photography • Gaming<br>
-                        Playing Guitar<br>
-                        Mountain Biking</p>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </main>
+    </div>
 
     <footer>
         <div class="social-links">
@@ -103,17 +137,28 @@
     </footer>
 
     <script>
-        // Handle tab clicks
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const section = tab.getAttribute('data-section');
-                window.location.href = `${section}.html`;
-            });
-        });
+        // Tab switching functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabSections = document.querySelectorAll('.tab-section');
 
-        // Handle hamburger menu
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and sections
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabSections.forEach(s => s.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding section
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+
+            // Add keyboard navigation
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
         });
     </script>
 </body>
