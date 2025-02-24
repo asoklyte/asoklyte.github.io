@@ -3,163 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Funky Portfolio</title>
+    <title>My Interactive CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">My CV</div>
+            <ul class="nav-links">
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="tech.html">Technical Skills</a></li>
+                <li><a href="projects.html">Passion Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="soft.html">Soft Skills</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1 class="tagline animate-fadeIn">This is the best CV you have ever encountered</h1>
+        <p class="subtagline animate-fadeIn">and it was made by me*</p>
+    </section>
+
     <div class="container">
-        <nav class="tab-nav">
-            <button class="tab-btn active" data-tab="work">Work Experience</button>
-            <button class="tab-btn" data-tab="tech">Technical Skills</button>
-            <button class="tab-btn" data-tab="projects">Passion Projects</button>
-            <button class="tab-btn" data-tab="education">Education</button>
-            <button class="tab-btn" data-tab="soft">Soft Skills</button>
-            <button class="tab-btn" data-tab="hobbies">Hobbies</button>
-        </nav>
-
-        <div class="tab-content">
-            <section id="work" class="tab-section active">
-                <h2>Work Experience</h2>
-                <div class="content-card">
-                    <h3>Senior Developer at Amazing Corp</h3>
-                    <p>Led development of enterprise applications</p>
-                    <h3>Tech Lead at Incredible Inc</h3>
-                    <p>Managed team of 5 developers on client projects</p>
-                    <h3>Full-stack Developer at Dream Team</h3>
-                    <p>Built responsive web applications using modern tech stack</p>
-                </div>
-            </section>
-
-            <section id="tech" class="tab-section">
-                <h2>Technical Skills</h2>
-                <div class="content-card">
-                    <div class="skill-group">
-                        <h3>Languages</h3>
-                        <p>JavaScript • Python • React</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Backend & Database</h3>
-                        <p>Node.js • MongoDB • AWS</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>DevOps</h3>
-                        <p>Docker • Git • CI/CD</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="work.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Work Experience</h1>
+                    <div class="preview-content">
+                        <p>• Led development of enterprise SaaS platform</p>
+                        <p>• Managed team of 12 developers</p>
+                        <p>• Increased revenue by 250%</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="projects" class="tab-section">
-                <h2>Passion Projects</h2>
-                <div class="content-card">
-                    <div class="project">
-                        <h3>AI Music Generator</h3>
-                        <p>Neural network-based music composition tool</p>
-                    </div>
-                    <div class="project">
-                        <h3>Smart Home System</h3>
-                        <p>IoT-based home automation platform</p>
-                    </div>
-                    <div class="project">
-                        <h3>Portfolio Website</h3>
-                        <p>This responsive portfolio showcase</p>
+            </a>
+            
+            <a href="tech.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Technical Skills</h1>
+                    <div class="preview-content">
+                        <p>• Full Stack: React, Node.js, Python</p>
+                        <p>• Cloud: AWS, Azure, GCP</p>
+                        <p>• DevOps: Docker, Kubernetes</p>
                     </div>
                 </div>
-            </section>
+            </a>
 
-            <section id="education" class="tab-section">
-                <h2>Education</h2>
-                <div class="content-card">
-                    <div class="education-item">
-                        <h3>MSc Computer Science</h3>
-                        <p>Advanced algorithms and software architecture</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>BSc Software Engineering</h3>
-                        <p>Foundation in software development principles</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>Various Certifications</h3>
-                        <p>AWS, Google Cloud, and more</p>
+            <a href="projects.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Passion Projects</h1>
+                    <div class="preview-content">
+                        <p>• AI-powered Personal Assistant</p>
+                        <p>• Blockchain Voting System</p>
+                        <p>• IoT Smart Home Platform</p>
                     </div>
                 </div>
-            </section>
+            </a>
 
-            <section id="soft" class="tab-section">
-                <h2>Soft Skills</h2>
-                <div class="content-card">
-                    <div class="skill-group">
-                        <h3>Leadership & Communication</h3>
-                        <p>Team management and clear communication</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Problem Solving & Teamwork</h3>
-                        <p>Analytical thinking and collaborative approach</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Time Management</h3>
-                        <p>Efficient project delivery and organization</p>
+            <a href="education.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Education</h1>
+                    <div class="preview-content">
+                        <p>• MSc Computer Science</p>
+                        <p>• AWS Solutions Architect</p>
+                        <p>• Google Cloud Professional</p>
                     </div>
                 </div>
-            </section>
+            </a>
 
-            <section id="hobbies" class="tab-section">
-                <h2>Hobbies</h2>
-                <div class="content-card">
-                    <div class="hobby">
-                        <h3>Photography & Gaming</h3>
-                        <p>Creative expression through visual arts</p>
-                    </div>
-                    <div class="hobby">
-                        <h3>Playing Guitar</h3>
-                        <p>Musical exploration and composition</p>
-                    </div>
-                    <div class="hobby">
-                        <h3>Mountain Biking</h3>
-                        <p>Adventure and outdoor activities</p>
+            <a href="soft.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Soft Skills</h1>
+                    <div class="preview-content">
+                        <p>• Leadership & Team Building</p>
+                        <p>• Project Management</p>
+                        <p>• Strategic Planning</p>
                     </div>
                 </div>
-            </section>
+            </a>
+
+            <a href="hobbies.html" class="section-button">
+                <div class="button-content">
+                    <h1 class="button-title">Hobbies</h1>
+                    <div class="preview-content">
+                        <p>• Competitive Programming</p>
+                        <p>• Tech Mentoring</p>
+                        <p>• Open Source Contributing</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 
     <footer>
-        <div class="social-links">
-            <a href="https://linkedin.com" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="social-link">
-                <i class="fab fa-instagram"></i>
-            </a>
+        <div class="container">
+            <h3 class="cta">Let's Connect!</h3>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footnote">*with the help of AI</p>
         </div>
-        <p class="footnote">* with the help of AI</p>
     </footer>
 
+    <style>
+        .section-button {
+            @apply block bg-[#E6E6FA] border-4 border-gray-700 rounded-xl p-8 
+                   shadow-lg transition-all duration-300 hover:shadow-xl
+                   min-h-[250px] relative overflow-hidden cursor-pointer;
+        }
+
+        .button-content {
+            @apply h-full flex flex-col items-center justify-center;
+        }
+
+        .button-title {
+            @apply text-4xl font-bold text-gray-800 mb-4 transition-opacity duration-300
+                   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+        }
+
+        .section-button:hover .button-title {
+            @apply opacity-0;
+        }
+
+        .preview-content {
+            @apply opacity-0 transition-opacity duration-300 text-center space-y-2 
+                   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+        }
+
+        .section-button:hover .preview-content {
+            @apply opacity-100;
+        }
+
+        .preview-content p {
+            @apply text-gray-700 text-lg;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+
     <script>
-        // Tab switching functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabSections = document.querySelectorAll('.tab-section');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and sections
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabSections.forEach(s => s.classList.remove('active'));
-
-                // Add active class to clicked button and corresponding section
-                btn.classList.add('active');
-                document.getElementById(btn.dataset.tab).classList.add('active');
-            });
-
-            // Add keyboard navigation
-            btn.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    btn.click();
-                }
-            });
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>
 </html>
+
+
+
+
+
+
