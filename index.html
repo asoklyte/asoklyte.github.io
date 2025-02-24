@@ -3,21 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Funky Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Portfolio</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#work">Work Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#tech">Technical Skills</a></li>
+                <li><a href="#soft">Soft Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#projects">Passion Projects</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>Hello, I'm Asoklyte! 🚀</h1>
+    <header class="hero">
+        <h1 class="tagline">This is the best CV you will ever encounter</h1>
+        <p class="subtext">and I made it myself*</p>
+    </header>
 
-    <div class="section">
-        <h2>About Me</h2>
-        <p>Welcome to my portfolio website. I'm passionate about [your field] and love creating amazing things!</p>
-    </div>
+    <main class="container">
+        <div class="tabs-container">
+            <div class="row">
+                <div class="tab" data-section="work">
+                    <h3>Work Experience</h3>
+                    <div class="preview">
+                        <p>Senior Developer at Amazing Corp<br>
+                        Tech Lead at Incredible Inc<br>
+                        Full-stack Developer at Dream Team</p>
+                    </div>
+                </div>
+                <div class="tab" data-section="tech">
+                    <h3>Technical Skills</h3>
+                    <div class="preview">
+                        <p>JavaScript • Python • React<br>
+                        Node.js • MongoDB • AWS<br>
+                        Docker • Git • CI/CD</p>
+                    </div>
+                </div>
+                <div class="tab" data-section="projects">
+                    <h3>Passion Projects</h3>
+                    <div class="preview">
+                        <p>AI Music Generator<br>
+                        Smart Home System<br>
+                        Portfolio Website</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tab" data-section="education">
+                    <h3>Education</h3>
+                    <div class="preview">
+                        <p>MSc Computer Science<br>
+                        BSc Software Engineering<br>
+                        Various Certifications</p>
+                    </div>
+                </div>
+                <div class="tab" data-section="soft">
+                    <h3>Soft Skills</h3>
+                    <div class="preview">
+                        <p>Leadership • Communication<br>
+                        Problem Solving • Teamwork<br>
+                        Time Management</p>
+                    </div>
+                </div>
+                <div class="tab" data-section="hobbies">
+                    <h3>Hobbies</h3>
+                    <div class="preview">
+                        <p>Photography • Gaming<br>
+                        Playing Guitar<br>
+                        Mountain Biking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>Find me on <a href="https://linkedin.com">LinkedIn</a> | <a href="https://instagram.com">Instagram</a></p>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p class="footnote">* with the help of AI</p>
     </footer>
 
+    <script>
+        // Handle tab clicks
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const section = tab.getAttribute('data-section');
+                window.location.href = `${section}.html`;
+            });
+        });
+
+        // Handle hamburger menu
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
