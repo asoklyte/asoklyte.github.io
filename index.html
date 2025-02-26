@@ -3,218 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Interactive CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Interactive CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 0 auto;
+            max-width: 1300px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #FF69B4 20%, transparent 70%);
+            animation: sparkle 1s linear forwards;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .section-card {
+            background: #98FB98 !important;
+            padding: 2.5rem !important;
+            text-decoration: none !important;
+        }
+        .section-card h2, 
+        .section-card ul li {
+            color: #333;
+        }
+        .card-preview {
+            background: #98FB98 !important;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">My CV</div>
-            <ul class="nav-links">
-                <li><a href="work.html">Work Experience</a></li>
-                <li><a href="tech.html">Technical Skills</a></li>
-                <li><a href="projects.html">Passion Projects</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="soft.html">Soft Skills</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav>
+        <div class="container text-center">
+            <button onclick="window.location.href='work-experience.html'">Work Experience</button>
+            <button onclick="window.location.href='education.html'">Education</button>
+            <button onclick="window.location.href='technical-skills.html'">Technical Skills</button>
+            <button onclick="window.location.href='passion-projects.html'">Passion Projects</button>
+            <button onclick="window.location.href='soft-skills.html'">Soft Skills</button>
+            <button onclick="window.location.href='hobbies.html'">Hobbies</button>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1 class="tagline animate-fadeIn">This is the best CV you have ever encountered</h1>
-        <p class="subtagline animate-fadeIn">and it was made by me*</p>
-    </section>
+    <header class="container fade-in text-center" style="margin-top: 100px;">
+        <h1>This is the best CV you will ever encounter</h1>
+        <h2>That I have made myself*</h2>
+        <p><small>*With the help of AI</small></p>
+    </header>
 
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="work.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Work Experience</h1>
-                    <div class="preview-content">
-                        <p>• Led development of enterprise SaaS platform</p>
-                        <p>• Managed team of 12 developers</p>
-                        <p>• Increased revenue by 250%</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="tech.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Technical Skills</h1>
-                    <div class="preview-content">
-                        <p>• Full Stack: React, Node.js, Python</p>
-                        <p>• Cloud: AWS, Azure, GCP</p>
-                        <p>• DevOps: Docker, Kubernetes</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="projects.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Passion Projects</h1>
-                    <div class="preview-content">
-                        <p>• AI-powered Personal Assistant</p>
-                        <p>• Blockchain Voting System</p>
-                        <p>• IoT Smart Home Platform</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="education.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Education</h1>
-                    <div class="preview-content">
-                        <p>• MSc Computer Science</p>
-                        <p>• AWS Solutions Architect</p>
-                        <p>• Google Cloud Professional</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="soft.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Soft Skills</h1>
-                    <div class="preview-content">
-                        <p>• Leadership & Team Building</p>
-                        <p>• Project Management</p>
-                        <p>• Strategic Planning</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="hobbies.html" class="section-button" tabindex="0">
-                <div class="button-content">
-                    <h1 class="button-title">Hobbies</h1>
-                    <div class="preview-content">
-                        <p>• Competitive Programming</p>
-                        <p>• Tech Mentoring</p>
-                        <p>• Open Source Contributing</p>
-                        <button class="click-more">Click for More</button>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <h3 class="cta">Let's Connect!</h3>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+    <main class="grid-container">
+        <a href="work-experience.html" id="work-experience" class="section-card fade-in">
+            <h2 class="card-title text-center">Work Experience</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Led creative campaigns</li>
+                    <li>Managed teams of 10+</li>
+                </ul>
             </div>
-            <p class="footnote">*with the help of AI</p>
+        </a>
+
+        <a href="education.html" id="education" class="section-card fade-in">
+            <h2 class="card-title text-center">Education</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Bachelor's in Marketing</li>
+                    <li>Digital Marketing Cert.</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="technical-skills.html" id="technical-skills" class="section-card fade-in">
+            <h2 class="card-title text-center">Technical Skills</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Adobe Suite Expert</li>
+                    <li>Analytics Specialist</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="passion-projects.html" id="passion-projects" class="section-card fade-in">
+            <h2 class="card-title text-center">Passion Projects</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Creative Workshop Series</li>
+                    <li>Brand Guide Developer</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="soft-skills.html" id="soft-skills" class="section-card fade-in">
+            <h2 class="card-title text-center">Soft Skills</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Master Storyteller</li>
+                    <li>Problem Solver</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="hobbies.html" id="hobbies" class="section-card fade-in">
+            <h2 class="card-title text-center">Hobbies</h2>
+            <div class="card-preview">
+                <ul>
+                    <li>Photography</li>
+                    <li>Urban Sketching</li>
+                </ul>
+            </div>
+        </a>
+    </main>
+
+    <footer class="container text-center">
+        <p>Connect with me:</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
         </div>
     </footer>
 
-   
-        .section-button {
-            @apply block bg-[#E6E6FA] border-4 border-gray-700 rounded-xl p-8 
-                   shadow-lg transition-all duration-300 hover:shadow-xl
-                   min-h-[250px] relative overflow-hidden cursor-pointer;
-            outline: none;
-        }
-
-        .section-button:focus {
-            @apply ring-4 ring-blue-400;
-        }
-
-        .button-content {
-            @apply h-full flex flex-col items-center justify-center;
-        }
-
-        .button-title {
-            @apply text-4xl font-bold text-gray-800 mb-4 transition-opacity duration-300
-                   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-        }
-
-        .section-button:hover .button-title,
-        .section-button:focus .button-title {
-            @apply opacity-0;
-        }
-
-        .preview-content {
-            @apply opacity-0 transition-opacity duration-300 text-center space-y-2 
-                   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-        }
-
-        .section-button:hover .preview-content,
-        .section-button:focus .preview-content {
-            @apply opacity-100;
-        }
-
-        .preview-content p {
-            @apply text-gray-700 text-lg;
-        }
-
-        .click-more {
-            @apply mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg
-                   transition-colors duration-200 hover:bg-gray-700;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        @media (max-width: 768px) {
-            .section-button {
-                @apply min-h-[200px];
-            }
-
-            .preview-content {
-                display: none;
-            }
-
-            .section-button:active .preview-content {
-                @apply block opacity-100;
-            }
-
-            .section-button:active .button-title {
-                @apply opacity-0;
-            }
-        }
-    
-
+    <!-- Enhanced sparkle effect -->
     <script>
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.7) { // Increased frequency
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (e.pageX - 5) + 'px';
+                sparkle.style.top = (e.pageY - 5) + 'px';
+                document.body.appendChild(sparkle);
+                
+                // Add random colors to sparkles
+                const colors = ['#FF69B4', '#98FB98', '#ADD8E6'];
+                sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 20%, transparent 70%)`;
 
-        // Handle keyboard navigation
-        document.querySelectorAll('.section-button').forEach(button => {
-            button.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    button.click();
-                }
-            });
+                sparkle.addEventListener('animationend', () => {
+                    sparkle.remove();
+                });
+            }
         });
     </script>
 </body>
