@@ -38,68 +38,74 @@
 
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="work.html" class="section-button">
+            <a href="work.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Work Experience</h1>
                     <div class="preview-content">
                         <p>• Led development of enterprise SaaS platform</p>
                         <p>• Managed team of 12 developers</p>
                         <p>• Increased revenue by 250%</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
             
-            <a href="tech.html" class="section-button">
+            <a href="tech.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Technical Skills</h1>
                     <div class="preview-content">
                         <p>• Full Stack: React, Node.js, Python</p>
                         <p>• Cloud: AWS, Azure, GCP</p>
                         <p>• DevOps: Docker, Kubernetes</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
 
-            <a href="projects.html" class="section-button">
+            <a href="projects.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Passion Projects</h1>
                     <div class="preview-content">
                         <p>• AI-powered Personal Assistant</p>
                         <p>• Blockchain Voting System</p>
                         <p>• IoT Smart Home Platform</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
 
-            <a href="education.html" class="section-button">
+            <a href="education.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Education</h1>
                     <div class="preview-content">
                         <p>• MSc Computer Science</p>
                         <p>• AWS Solutions Architect</p>
                         <p>• Google Cloud Professional</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
 
-            <a href="soft.html" class="section-button">
+            <a href="soft.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Soft Skills</h1>
                     <div class="preview-content">
                         <p>• Leadership & Team Building</p>
                         <p>• Project Management</p>
                         <p>• Strategic Planning</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
 
-            <a href="hobbies.html" class="section-button">
+            <a href="hobbies.html" class="section-button" tabindex="0">
                 <div class="button-content">
                     <h1 class="button-title">Hobbies</h1>
                     <div class="preview-content">
                         <p>• Competitive Programming</p>
                         <p>• Tech Mentoring</p>
                         <p>• Open Source Contributing</p>
+                        <button class="click-more">Click for More</button>
                     </div>
                 </div>
             </a>
@@ -117,11 +123,16 @@
         </div>
     </footer>
 
-    <style>
+   
         .section-button {
             @apply block bg-[#E6E6FA] border-4 border-gray-700 rounded-xl p-8 
                    shadow-lg transition-all duration-300 hover:shadow-xl
                    min-h-[250px] relative overflow-hidden cursor-pointer;
+            outline: none;
+        }
+
+        .section-button:focus {
+            @apply ring-4 ring-blue-400;
         }
 
         .button-content {
@@ -133,7 +144,8 @@
                    absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
         }
 
-        .section-button:hover .button-title {
+        .section-button:hover .button-title,
+        .section-button:focus .button-title {
             @apply opacity-0;
         }
 
@@ -142,12 +154,18 @@
                    absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
         }
 
-        .section-button:hover .preview-content {
+        .section-button:hover .preview-content,
+        .section-button:focus .preview-content {
             @apply opacity-100;
         }
 
         .preview-content p {
             @apply text-gray-700 text-lg;
+        }
+
+        .click-more {
+            @apply mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg
+                   transition-colors duration-200 hover:bg-gray-700;
         }
 
         @keyframes fadeIn {
@@ -164,18 +182,40 @@
         .animate-fadeIn {
             animation: fadeIn 1s ease-out forwards;
         }
-    </style>
+
+        @media (max-width: 768px) {
+            .section-button {
+                @apply min-h-[200px];
+            }
+
+            .preview-content {
+                display: none;
+            }
+
+            .section-button:active .preview-content {
+                @apply block opacity-100;
+            }
+
+            .section-button:active .button-title {
+                @apply opacity-0;
+            }
+        }
+    
 
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
+
+        // Handle keyboard navigation
+        document.querySelectorAll('.section-button').forEach(button => {
+            button.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
