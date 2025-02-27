@@ -10,9 +10,9 @@
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 20px; /* Increased gap for better spacing */
             margin: 0 auto;
-            max-width: 1300px;
+            max-width: 2300px;
         }
         .text-center {
             text-align: center;
@@ -20,26 +20,36 @@
         .sparkle {
             position: fixed;
             pointer-events: none;
-            width: 10px;
-            height: 10px;
+            width: 20px;
+            height: 20px;
             background: radial-gradient(circle, #FF69B4 20%, transparent 70%);
-            animation: sparkle 1s linear forwards;
+            animation: sparkle 0.3s linear forwards;
         }
         @keyframes sparkle {
             0% { transform: scale(0); opacity: 1; }
             100% { transform: scale(2); opacity: 0; }
         }
         .section-card {
-            background: #98FB98 !important;
-            padding: 2.5rem !important;
+            background: #FFDDC1 !important;
+            padding: 3rem !important; /* Increased padding for bigger cards */
             text-decoration: none !important;
+            border-radius: 15px; /* Added border radius for aesthetics */
         }
         .section-card h2, 
         .section-card ul li {
             color: #333;
         }
         .card-preview {
-            background: #98FB98 !important;
+            background: #FFB6C1 !important;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-links img {
+            width: 24px; /* Set icon size */
+            height: 24px; /* Set icon size */
         }
     </style>
 </head>
@@ -57,8 +67,7 @@
 
     <header class="container fade-in text-center" style="margin-top: 100px;">
         <h1>This is the best CV you will ever encounter</h1>
-        <h2>That I have made myself*</h2>
-        <p><small>*With the help of AI</small></p>
+        <h2>That I have made myself</h2>
     </header>
 
     <main class="grid-container">
@@ -66,7 +75,7 @@
             <h2 class="card-title text-center">Work Experience</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Led creative campaigns</li>
+                    <li>E-mail Marketing</li>
                     <li>Managed teams of 10+</li>
                 </ul>
             </div>
@@ -76,8 +85,9 @@
             <h2 class="card-title text-center">Education</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Bachelor's in Marketing</li>
-                    <li>Digital Marketing Cert.</li>
+                    <li>Master's in Digital Marketing</li>
+                    <li>Bachelor's in Media Studies</li>
+                    <li>Vocational Training - Media Technician</li>
                 </ul>
             </div>
         </a>
@@ -86,8 +96,10 @@
             <h2 class="card-title text-center">Technical Skills</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Adobe Suite Expert</li>
-                    <li>Analytics Specialist</li>
+                    <li>Adobe Suite</li>
+                    <li>Facebook Ads</li>
+                    <li>SFMC</li>
+                    <li>Microsoft Office</li>
                 </ul>
             </div>
         </a>
@@ -96,8 +108,8 @@
             <h2 class="card-title text-center">Passion Projects</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Creative Workshop Series</li>
-                    <li>Brand Guide Developer</li>
+                    <li>@be.progos</li>
+                    <li>This website</li>
                 </ul>
             </div>
         </a>
@@ -106,8 +118,10 @@
             <h2 class="card-title text-center">Soft Skills</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Master Storyteller</li>
-                    <li>Problem Solver</li>
+                    <li>Time Management</li>
+                    <li>Seeing the Big Picture</li>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
                 </ul>
             </div>
         </a>
@@ -116,8 +130,9 @@
             <h2 class="card-title text-center">Hobbies</h2>
             <div class="card-preview">
                 <ul>
-                    <li>Photography</li>
-                    <li>Urban Sketching</li>
+                    <li>Speedskating</li>
+                    <li>Muay-Thai</li>
+                    <li>Video editing</li>
                 </ul>
             </div>
         </a>
@@ -126,9 +141,14 @@
     <footer class="container text-center">
         <p>Connect with me:</p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
+           <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="images/in.png" alt="LinkedIn">
+            </a>
+            <a href="https://instagram.com/yourhandle" target="_blank">
+                <img src="images/ig.png" alt="Instagram">
+            </a>
         </div>
+        <p><small>*With the help of AI</small></p> <!-- Moved asterisk explanation here -->
     </footer>
 
     <!-- Enhanced sparkle effect -->
