@@ -9,13 +9,15 @@ body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(135deg, #FF6F91, #FF9A8B, #FFB6A0);
     background-size: 300% 300%;
-    animation: gradientAnimation 10s ease infinite;
+    animation: gradientAnimation 10s ease infinite, floatShapes 20s ease-in-out infinite;
     color: #4A4A4A;
     line-height: 1.6;
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Funky Gradient Animation */
@@ -23,6 +25,13 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* Floating Shapes Animation */
+@keyframes floatShapes {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 .container {
@@ -35,7 +44,7 @@ body {
 nav {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     background: rgba(255, 209, 220, 0.9);
     backdrop-filter: blur(10px);
@@ -43,18 +52,91 @@ nav {
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid #FF69B4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Home Button */
+.home-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+    border-radius: 50% 20% 50% 20%;
+    transform: rotate(-10deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.home-button:before {
+    content: "🏠";
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.home-button:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% { transform: rotate(-10deg) scale(1); }
+    50% { transform: rotate(-10deg) scale(1.05); }
+    100% { transform: rotate(-10deg) scale(1); }
+}
+
+nav .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
 }
 
 nav a {
     color: #4A4A4A;
     text-decoration: none;
-    margin: 0 1rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
     color: #FF69B4;
     transform: scale(1.1);
+}
+
+/* Hamburger Menu Styles */
+nav ul.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 209, 220, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease;
+}
+
+nav ul li {
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul li:hover {
+    background: rgba(255, 105, 180, 0.2);
 }
 
 /* Section Cards */
@@ -71,7 +153,7 @@ nav a:hover {
 }
 
 .section-card:hover {
-    transform: scale(1.05) rotate(1deg);
+    background: #FFB6C1; /* Color shift effect */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -148,7 +230,21 @@ button:active {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
     .section-card {
         margin: 1rem 0;
     }
