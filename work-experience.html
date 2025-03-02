@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not that boring CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Increased gap for better spacing */
+            margin: 0 auto;
+            max-width: 2300px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #FF69B4 20%, transparent 70%);
+            animation: sparkle 0.3s linear forwards;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .section-card {
+            background: #FFDDC1 !important;
+            padding: 3rem !important; /* Increased padding for bigger cards */
+            text-decoration: none !important;
+            border-radius: 15px; /* Added border radius for aesthetics */
+        }
+        .section-card h2, 
+        .section-card ul li {
+            color: #333;
+        }
+        .card-preview {
+            background: #FFB6C1 !important;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-links img {
+            width: 24px; /* Set icon size */
+            height: 24px; /* Set icon size */
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 209, 220, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid #FF69B4;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-links button {
+            background: transparent;
+            border: none;
+            color: #4A4A4A;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links button:hover {
+            color: #FF69B4;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 60px; /* Below the navbar */
+                right: 0;
+                background: rgba(255, 209, 220, 0.9);
+                width: 100%;
+                transition: max-height 0.3s ease;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .nav-links.active {
+                display: flex;
+                max-height: 300px; /* Arbitrary value for dropdown */
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Stack sections vertically */
+                gap: 15px; /* Modern look with even spacing */
+            }
+            h1 {
+                font-size: 1.8rem; /* Scale down heading size */
+            }
+            h2 {
+                font-size: 1.5rem; /* Scale down heading size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem; /* Further scale down for smaller screens */
+            }
+            h2 {
+                font-size: 1.2rem; /* Further scale down for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container text-center">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="nav-links" id="nav-links">
+                <button onclick="window.location.href='work-experience.html'">Work Experience</button>
+                <button onclick="window.location.href='education.html'">Education</button>
+                <button onclick="window.location.href='technical-skills.html'">Technical Skills</button>
+                <button onclick="window.location.href='passion-projects.html'">Passion Projects</button>
+                <button onclick="window.location.href='soft-skills.html'">Soft Skills</button>
+                <button onclick="window.location.href='hobbies.html'">Hobbies</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container fade-in text-center" style="margin-top: 100px;">
+        <h1>This is a more elaborate version of my CV</h1>
+        <h2>All because I wanted a fancier e-mail address</h2>
+</header>
+
+    <footer class="container text-center">
+        <p>Let's connect:</p>
+        <div class="social-links">
+           <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="images/inn.png" alt="LinkedIn">
+            </a>
+            <a href="https://instagram.com/yourhandle" target="_blank">
+                <img src="images/ign.png" alt="Instagram">
+            </a>
+        </div>
+       
+    </footer>
+
+    <!-- Enhanced sparkle effect -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.7) { // Increased frequency
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (e.pageX - 5) + 'px';
+                sparkle.style.top = (e.pageY - 5) + 'px';
+                document.body.appendChild(sparkle);
+                
+                // Add random colors to sparkles
+                const colors = ['#FF69B4', '#98FB98', '#ADD8E6'];
+                sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 20%, transparent 70%)`;
+
+                sparkle.addEventListener('animationend', () => {
+                    sparkle.remove();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
