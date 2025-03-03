@@ -7,6 +7,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Make the top banner smaller */
+        .hero {
+            padding: 2rem 0; /* Reduced padding */
+        }
+        .hero h1 {
+            margin-bottom: 0.5rem; /* Reduced margin */
+        }
+        /* Adjust header height and make it smaller */
+        header {
+            padding: 0.5rem 0; /* Further reduced padding */
+        }
+        /* Make sticky navigation bar smaller */
+        nav {
+            height: auto;
+            min-height: 40px; /* Reduced height */
+        }
+        .nav-links a {
+            padding: 0.3rem 0.5rem; /* Smaller padding for nav links */
+            font-size: 0.9rem; /* Smaller font size */
+        }
+        .logo h2 {
+            font-size: 1.2rem; /* Smaller logo text */
+            margin: 0;
+        }
+        /* Adjust top margin for sections to prevent overlap with sticky header */
+        section {
+            padding-top: 60px; /* Adjust based on your header height */
+            margin-top: -40px; /* Negative margin to offset padding */
+        }
+        #main-content {
+            padding-top: 20px; /* Add some space at the top */
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
@@ -15,7 +49,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <h2>My CV</h2>
+                    <h2><a href="#" style="text-decoration: none; color: inherit;">My CV</a></h2>
                 </div>
                 <div class="nav-links">
                     <a href="#work-experience" class="sparkle">Work Experience</a>
@@ -373,7 +407,6 @@
             <div class="social-links">
                 <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
             </div>
             <p><small>&copy; 2023 Marketing Professional. All rights reserved.</small></p>
         </div>
@@ -390,6 +423,30 @@
             card.addEventListener('click', function() {
                 const id = this.id.replace('-card', '');
                 document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+            });
+        });
+        
+        // My CV logo click to top of page
+        document.querySelector('.logo a').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Adjust scroll position to account for sticky header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
