@@ -3,278 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not that boring CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Interactive CV - Marketing Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px; /* Increased gap for better spacing */
-            margin: 0 auto;
-            max-width: 2300px;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .sparkle {
-            position: fixed;
-            pointer-events: none;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #FF69B4 20%, transparent 70%);
-            animation: sparkle 0.3s linear forwards;
-        }
-        @keyframes sparkle {
-            0% { transform: scale(0); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-        .section-card {
-            background: #FFDDC1 !important;
-            padding: 3rem !important; /* Increased padding for bigger cards */
-            text-decoration: none !important;
-            border-radius: 15px; /* Added border radius for aesthetics */
-        }
-        .section-card h2, 
-        .section-card ul li {
-            color: #333;
-        }
-        .card-preview {
-            background: #FFB6C1 !important;
-        }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-        .social-links img {
-            width: 24px; /* Set icon size */
-            height: 24px; /* Set icon size */
-        }
-
-        /* Navigation Styles */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 209, 220, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            border-bottom: 2px solid #FF69B4;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .nav-links button {
-            background: transparent;
-            border: none;
-            color: #4A4A4A;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links button:hover {
-            color: #FF69B4;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                position: absolute;
-                top: 60px; /* Below the navbar */
-                right: 0;
-                background: rgba(255, 209, 220, 0.9);
-                width: 100%;
-                transition: max-height 0.3s ease;
-                max-height: 0;
-                overflow: hidden;
-            }
-
-            .nav-links.active {
-                display: flex;
-                max-height: 300px; /* Arbitrary value for dropdown */
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr; /* Stack sections vertically */
-                gap: 15px; /* Modern look with even spacing */
-            }
-            h1 {
-                font-size: 1.8rem; /* Scale down heading size */
-            }
-            h2 {
-                font-size: 1.5rem; /* Scale down heading size */
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem; /* Further scale down for smaller screens */
-            }
-            h2 {
-                font-size: 1.2rem; /* Further scale down for smaller screens */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="container text-center">
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <div class="nav-links" id="nav-links">
-                <button onclick="window.location.href='work-experience.html'">Work Experience</button>
-                <button onclick="window.location.href='education.html'">Education</button>
-                <button onclick="window.location.href='technical-skills.html'">Technical Skills</button>
-                <button onclick="window.location.href='passion-projects.html'">Passion Projects</button>
-                <button onclick="window.location.href='soft-skills.html'">Soft Skills</button>
-                <button onclick="window.location.href='hobbies.html'">Hobbies</button>
-            </div>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h2>My CV</h2>
+                </div>
+                <div class="nav-links">
+                    <a href="#work-experience" class="sparkle">Work Experience</a>
+                    <a href="#technical-skills" class="sparkle">Technical Skills</a>
+                    <a href="#education" class="sparkle">Education</a>
+                    <a href="#soft-skills" class="sparkle">Soft Skills</a>
+                    <a href="#passion-projects" class="sparkle">Passion Projects</a>
+                    <a href="#hobbies" class="sparkle">Hobbies</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
-    </nav>
-
-    <header class="container fade-in text-center" style="margin-top: 100px;">
-        <h1>This is a more elaborate version of my CV</h1>
-        <h2>All because I wanted a fancier e-mail address</h2>
     </header>
 
-    <main class="grid-container">
-        <a href="work-experience.html" id="work-experience" class="section-card fade-in">
-            <h2 class="card-title text-center">Work Experience</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>E-mail Marketing</li>
-                    <li>Managed teams of 10+</li>
-                </ul>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Marketing Professional</h1>
+                <p>A creative marketing specialist with a passion for innovative campaigns and data-driven strategies</p>
             </div>
-        </a>
+        </section>
 
-        <a href="education.html" id="education" class="section-card fade-in">
-            <h2 class="card-title text-center">Education</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>Master's in Digital Marketing</li>
-                    <li>Bachelor's in Media Studies</li>
-                    <li>Vocational Training - Media Technician</li>
-                </ul>
-            </div>
-        </a>
+        <section class="section" id="preview-cards">
+            <div class="container">
+                <div class="section-cards">
+                    <div class="card" id="work-experience-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Work Experience</h3>
+                            <p>Marketing roles and professional accomplishments</p>
+                            <div class="card-preview">
+                                <p>Timeline of my professional journey in marketing, highlighting key achievements and responsibilities.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <a href="technical-skills.html" id="technical-skills" class="section-card fade-in">
-            <h2 class="card-title text-center">Technical Skills</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>Adobe Suite</li>
-                    <li>Facebook Ads</li>
-                    <li>SFMC</li>
-                    <li>Microsoft Office</li>
-                </ul>
-            </div>
-        </a>
+                    <div class="card" id="technical-skills-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Technical Skills</h3>
+                            <p>Marketing-specific technical capabilities</p>
+                            <div class="card-preview">
+                                <p>Visual representation of my marketing technical skills including digital tools, analytics, and platforms.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <a href="passion-projects.html" id="passion-projects" class="section-card fade-in">
-            <h2 class="card-title text-center">Passion Projects</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>@be.progos</li>
-                    <li>This website</li>
-                </ul>
-            </div>
-        </a>
+                    <div class="card" id="education-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Education</h3>
+                            <p>Academic credentials and certifications</p>
+                            <div class="card-preview">
+                                <p>Details of my formal education and professional certifications relevant to marketing.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <a href="soft-skills.html" id="soft-skills" class="section-card fade-in">
-            <h2 class="card-title text-center">Soft Skills</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>Time Management</li>
-                    <li>Seeing the Big Picture</li>
-                    <li>Communication</li>
-                    <li>Teamwork</li>
-                </ul>
-            </div>
-        </a>
+                    <div class="card" id="soft-skills-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Soft Skills</h3>
+                            <p>Interpersonal and professional competencies</p>
+                            <div class="card-preview">
+                                <p>Overview of my communication, leadership, and collaboration abilities that complement my technical skills.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <a href="hobbies.html" id="hobbies" class="section-card fade-in">
-            <h2 class="card-title text-center">Hobbies</h2>
-            <div class="card-preview">
-                <ul>
-                    <li>Speedskating</li>
-                    <li>Muay-Thai</li>
-                    <li>Video editing</li>
-                </ul>
+                    <div class="card" id="passion-projects-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Passion Projects</h3>
+                            <p>Self-initiated marketing projects</p>
+                            <div class="card-preview">
+                                <p>Showcase of creative marketing initiatives I've pursued outside of my professional roles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="hobbies-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Hobbies</h3>
+                            <p>Personal interests and activities</p>
+                            <div class="card-preview">
+                                <p>A glimpse into my personal life and interests that shape my creative perspective.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </a>
+        </section>
+
+        <section class="section" id="work-experience">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Senior Marketing Specialist</h3>
+                        <p class="timeline-date">2020 - Present</p>
+                        <p>Led digital marketing campaigns resulting in 45% increase in customer engagement and 30% growth in conversion rates.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Marketing Coordinator</h3>
+                        <p class="timeline-date">2018 - 2020</p>
+                        <p>Managed social media presence across platforms, increasing follower base by 10,000+ and improving engagement metrics by 25%.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Marketing Assistant</h3>
+                        <p class="timeline-date">2016 - 2018</p>
+                        <p>Supported marketing team in campaign development, content creation, and analytics reporting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="technical-skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Digital Marketing</h3>
+                        <div class="skill-item">
+                            <p>SEO/SEM</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Social Media Marketing</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Email Marketing</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Analytics</h3>
+                        <div class="skill-item">
+                            <p>Google Analytics</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Data Visualization</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>A/B Testing</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Content Creation</h3>
+                        <div class="skill-item">
+                            <p>Copywriting</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Graphic Design</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Video Production</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Master of Business Administration</h3>
+                        <p class="timeline-date">2014 - 2016</p>
+                        <p>University of Marketing Excellence - Specialized in Digital Marketing Strategy</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Bachelor of Arts in Communications</h3>
+                        <p class="timeline-date">2010 - 2014</p>
+                        <p>State University - Minor in Business Administration</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Digital Marketing Certification</h3>
+                        <p class="timeline-date">2018</p>
+                        <p>Google Analytics Certification, HubSpot Inbound Marketing Certification</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="soft-skills">
+            <div class="container">
+                <h2>Soft Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Communication</h3>
+                        <div class="skill-item">
+                            <p>Public Speaking</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Written Communication</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Interpersonal Communication</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Leadership</h3>
+                        <div class="skill-item">
+                            <p>Team Management</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Strategic Planning</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Decision Making</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Adaptability</h3>
+                        <div class="skill-item">
+                            <p>Problem Solving</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Creativity</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <p>Time Management</p>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="passion-projects">
+            <div class="container">
+                <h2>Passion Projects</h2>
+                <div class="section-cards">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-image-1.jpg" alt="Local Business Marketing Initiative">
+                            </div>
+                            <h3 class="card-title">Local Business Marketing Initiative</h3>
+                            <p>Pro bono marketing campaign for small businesses in my community, resulting in average revenue increase of 25%.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-image-2.jpg" alt="Marketing Podcast">
+                            </div>
+                            <h3 class="card-title">Marketing Podcast</h3>
+                            <p>Weekly podcast discussing latest marketing trends and interviewing industry professionals.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-image-3.jpg" alt="Digital Marketing Blog">
+                            </div>
+                            <h3 class="card-title">Digital Marketing Blog</h3>
+                            <p>Personal blog with over 10,000 monthly visitors covering topics in SEO, content marketing, and social media strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="hobbies">
+            <div class="container">
+                <h2>Hobbies</h2>
+                <div class="section-cards">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-hobby-1.jpg" alt="Photography">
+                            </div>
+                            <h3 class="card-title">Photography</h3>
+                            <p>Landscape and street photography, with several images featured in local exhibitions.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-hobby-2.jpg" alt="Hiking">
+                            </div>
+                            <h3 class="card-title">Hiking</h3>
+                            <p>Exploring nature trails and mountains, having completed over 20 major trails in the past 5 years.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-image">
+                                <img src="placeholder-hobby-3.jpg" alt="Cooking">
+                            </div>
+                            <h3 class="card-title">Cooking</h3>
+                            <p>Experimenting with international cuisines and hosting dinner parties for friends and colleagues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="container text-center">
-        <p>Let's connect:</p>
-        <div class="social-links">
-           <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                <img src="images/inn.png" alt="LinkedIn">
-            </a>
-            <a href="https://instagram.com/yourhandle" target="_blank">
-                <img src="images/ign.png" alt="Instagram">
-            </a>
+    <footer>
+        <div class="container">
+            <h3>Let's Connect</h3>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p><small>&copy; 2023 Marketing Professional. All rights reserved.</small></p>
         </div>
-       
     </footer>
 
-    <!-- Enhanced sparkle effect -->
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('active');
-        }
-
-        document.addEventListener('click', function(event) {
-            const navLinks = document.getElementById('nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
+        // Simple toggle for mobile menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        document.addEventListener('mousemove', function(e) {
-            if (Math.random() > 0.7) { // Increased frequency
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = (e.pageX - 5) + 'px';
-                sparkle.style.top = (e.pageY - 5) + 'px';
-                document.body.appendChild(sparkle);
-                
-                // Add random colors to sparkles
-                const colors = ['#FF69B4', '#98FB98', '#ADD8E6'];
-                sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 20%, transparent 70%)`;
-
-                sparkle.addEventListener('animationend', () => {
-                    sparkle.remove();
-                });
-            }
+        // Card click navigation
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                const id = this.id.replace('-card', '');
+                document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+            });
         });
     </script>
 </body>
