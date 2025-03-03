@@ -1,0 +1,285 @@
+# Interactive CV Website Product Requirements Document
+
+## 1. Elevator Pitch
+A vibrant, interactive CV website with a funky pastel aesthetic that showcases a marketing professional's skills, experience, and personality. The mobile-first design features interactive elements like hover sparkles, preview cards, and animated color blobs, making it more engaging than a traditional resume. This digital portfolio allows recruiters to explore different aspects of the candidate's professional and personal life in an intuitive, visually appealing format that demonstrates creativity and technical capability.
+
+## 2. Who is this website for?
+- **Primary audience**: Recruiters and hiring managers in the marketing industry who want to learn more about the candidate beyond a traditional CV
+- **Secondary audience**: Professional connections who want to understand the candidate's background and capabilities
+- **Tertiary audience**: Potential clients or collaborators interested in the candidate's marketing expertise and personal projects
+
+## 3. Functional Requirements
+
+### Core Functionality
+- Single-page application with tabbed/sectioned content that doesn't require page reloads
+- Responsive design that works seamlessly on both mobile and desktop devices
+- Navigation system that adapts between desktop and mobile views
+- Interactive elements that enhance user engagement
+- Social media connection links
+
+### Content Sections
+- **Home/Introduction**: Personal summary with heading and subheading
+- **Work Experience**: Timeline or card-based layout of professional experience
+- **Technical Skills**: Visual representation of marketing technical skills
+- **Education**: Academic background and certifications
+- **Soft Skills**: Representation of interpersonal and professional soft skills
+- **Passion Projects**: Showcase of personal marketing initiatives
+- **Hobbies**: Insight into personal interests to demonstrate well-roundedness
+
+### Interactive Elements
+- Sparkle animations on hover/tap events
+- Preview functionality on section cards (hover reveals preview of content)
+- Color blobs/shapes that float in navigation areas
+- Custom interactive element (e.g., progress bars for skills that animate when scrolled into view)
+
+### Navigation
+- Sticky navigation bar at the top
+- Hamburger menu on mobile devices
+- Home button for easy return to main page
+- Section links that reveal content without leaving the main page
+
+### Social Connection
+- "Let's Connect" section at the bottom with LinkedIn and Instagram links
+- Visual indication (animation/transition) when social links are interacted with
+
+## 4. User Stories
+
+### As a recruiter, I want to:
+- Quickly understand the candidate's background and skills at a glance
+- Navigate easily between different sections of information
+- Be impressed by the candidate's creativity and technical capabilities
+- Access the candidate's social media profiles to learn more
+- Easily view the site on any device, whether in the office (desktop) or on the go (mobile)
+
+### As the CV owner, I want to:
+- Present myself as a creative, well-rounded marketing professional
+- Showcase my personality through design choices and content
+- Demonstrate my understanding of modern web design trends
+- Provide more comprehensive information than a traditional CV allows
+- Make a memorable impression on potential employers
+
+### As a professional connection, I want to:
+- Learn about the candidate's experience and capabilities
+- Understand what makes this person unique in the marketing field
+- Connect with the candidate on social media platforms
+- Be inspired by an innovative approach to personal branding
+
+## 5. User Interface
+
+### Visual Design
+- **Color Scheme**: Pastel pink as primary color, complemented by coordinating pastel colors based on design best practices
+- **Typography**: Modern, clean font families with good readability across devices
+- **Aesthetic**: "Funky" modern design with floating color shapes/blobs
+- **Visual Hierarchy**: Clear distinction between sections with consistent styling
+
+### Layout
+- **Mobile**: Single column layout with full-width sections and hamburger navigation
+- **Desktop**: Expanded navigation bar, potentially multi-column content layout where appropriate
+- **Content Cards**: Section cards on the main page that expand or link to detailed content
+
+### Interactive Components
+- **Navigation**: Sticky top navigation with home button and section links
+- **Section Cards**: Hover/tap interaction reveals preview of section content
+- **Sparkle Effects**: Custom animations on interactive elements when hovered or tapped
+- **Floating Elements**: Animated color blobs/shapes in navigation areas
+- **Social Buttons**: "Let's Connect" section with animated social media links
+
+### Responsive Considerations
+- **Mobile-First**: Designed primarily for mobile devices, then adapted for larger screens
+- **Breakpoints**: Specific design adjustments at common device width breakpoints
+- **Touch vs. Mouse**: Different interaction models for touch devices vs. desktop
+- **Performance**: Optimized animations and effects for smooth performance on all devices
+
+### Navigation Patterns
+- **Tabs/Accordions**: Content sections that expand in place or slide into view
+- **Hamburger Menu**: Collapsible menu on mobile devices
+- **Breadcrumbs**: Visual indication of current section
+- **Home Button**: Prominent, easily accessible return to main view
+# User Interface Design Document: Dynamic Minimalism
+
+## Layout Structure
+
+### Home/Landing Page
+- Clean, minimalist layout with significant white space
+- Fixed header with sticky navigation
+- Hero section with name, professional title, and brief introduction
+- Section cards arranged in a vertical flow on mobile and a grid layout on desktop
+- Footer section with "Let's Connect" social links
+
+### Section Content Pages/Tabs
+- Consistent layout pattern across all content sections
+- Header maintains visual continuity with the main page
+- Content displayed in card-based format with adequate spacing
+- Return to main view clearly indicated
+
+### Content Organization
+- Linear, scrollable flow on mobile devices
+- Grid-based arrangement on larger screens
+- Visual separation between sections using subtle dividers or spacing
+- Progressive disclosure of content (preview → detail)
+
+## Core Components
+
+### Navigation System
+- Sticky top navigation bar across all views
+- Home button with subtle animation on hover
+- Section links that visually indicate current location
+- Hamburger menu on mobile that expands to reveal options
+- Animated pastel blob shapes float subtly within the navigation area
+
+### Section Cards
+- Clean, minimal cards with consistent sizing
+- Hover states that reveal a subtle preview of content
+- Micro-interactions: sparkle animations on hover/tap
+- Smooth transitions when expanding or navigating to detailed content
+
+### Work Experience Component
+- Timeline-based layout with elegant connecting elements
+- Job position, company, and date clearly displayed
+- Expandable sections for additional role details
+
+### Skills Visualization
+- Clean, visual representation of technical and soft skills
+- Minimalist progress indicators or skill level visualization
+- Grouped by category for easy scanning
+
+### Project/Hobby Cards
+- Image-forward design for visual appeal
+- Concise text descriptions
+- Consistent treatment across different content types
+
+### Social Connection Footer
+- Simple, elegant "Let's Connect" section
+- LinkedIn and Instagram icons with hover animations
+- Positioned consistently at the bottom of all views
+
+## Interaction Patterns
+
+### Navigation Interactions
+- Smooth scrolling between sections
+- Hamburger menu expands with elegant animation on mobile
+- Current section visually highlighted in navigation
+- Subtle hover states on all interactive elements
+
+### Content Reveal
+- Tab-based or accordion-style content reveal without page reloads
+- Smooth transitions between content sections
+- Preview on hover: subtle peek at content when cursor hovers over section cards
+
+### Micro-interactions
+- Sparkle animations appear on buttons/interactive elements when hovered or tapped
+- Blob shapes subtly shift or move in navigation area
+- Subtle scaling or shadow effects on cards during hover
+- Home button has a distinctive hover animation
+
+### State Changes
+- Clear visual feedback for all interactive elements
+- Distinct active, hover, and pressed states
+- Animated transitions between states (300-500ms duration)
+
+## Visual Design Elements & Color Scheme
+
+### Primary Color Palette
+- Pastel pink (#FFD1DC) as primary accent color
+- White/off-white (#FFFFFF, #FAFAFA) for backgrounds
+- Light gray (#E0E0E0) for subtle dividers
+- Darker gray (#333333) for primary text
+
+### Secondary Colors
+- Complementary pastel tones:
+  - Soft lavender (#D1C1FF)
+  - Mint green (#C1FFD9)
+  - Baby blue (#C1E8FF)
+- Used sparingly as accents and for the animated blob elements
+
+### Visual Elements
+- Floating blob shapes in navigation (subtle, not overwhelming)
+- Thin, elegant dividing lines between content sections
+- Consistent corner radius on all cards and interactive elements (8px)
+- Generous white space throughout the design
+
+### Shadows & Depth
+- Minimal use of shadows for subtle depth
+- Card elements have very light elevation (2-4px blur, 15% opacity)
+- Navigation has slightly stronger shadow to indicate its fixed position
+
+## Mobile, Web App, Desktop Considerations
+
+### Mobile Design (Primary Focus)
+- Single column layout with full-width content cards
+- Hamburger menu for navigation
+- Content optimized for vertical scrolling
+- Touch targets minimum 44px × 44px
+- Bottom-anchored "Let's Connect" section
+
+### Tablet Considerations
+- Two-column grid where appropriate
+- Expanded navigation options compared to mobile
+- Optimized for both portrait and landscape orientations
+
+### Desktop Enhancement
+- Multi-column grid layout for efficient space usage
+- Persistent navigation bar with all options visible
+- Hover states and cursor-based interactions
+- Larger content preview areas
+
+### Responsive Behavior
+- Fluid transitions between breakpoints
+- Key breakpoints:
+  - Mobile: 320px-767px
+  - Tablet: 768px-1023px
+  - Desktop: 1024px and above
+- Content reflow rather than scaling at breakpoints
+
+## Typography
+
+### Font Selection
+- Primary font: Montserrat (clean, modern sans-serif)
+- Secondary font: Open Sans (excellent readability for body text)
+- Both fonts available on Google Fonts for reliable loading on GitHub Pages
+
+### Type Scale
+- Modular scale with 1.2 ratio
+- Base size: 16px
+- H1: 28px (mobile) / 36px (desktop)
+- H2: 24px (mobile) / 30px (desktop)
+- H3: 20px (mobile) / 24px (desktop)
+- Body: 16px
+- Caption/small text: 14px
+
+### Text Treatment
+- Generous line height (1.5 for body text)
+- Adequate letter spacing (0.5px for headings)
+- High contrast between text and background
+- Consistent alignment (left-aligned for most content)
+
+## Accessibility
+
+### Color Contrast
+- All text maintains minimum 4.5:1 contrast ratio with backgrounds
+- Interactive elements have distinct focus states
+- Color is not the sole indicator of meaning or state
+
+### Navigation & Structure
+- Logical tab order through interactive elements
+- Skip-to-content link for keyboard users
+- Persistent navigation available across all views
+- Clear section headings and content organization
+
+### Interactive Elements
+- All interactive elements accessible via keyboard
+- Focus states clearly visible
+- Touch targets adequately sized and spaced
+- Animations can be reduced/disabled via prefers-reduced-motion media query
+
+### Content Considerations
+- Alt text for all images
+- Semantic HTML structure
+- ARIA attributes where appropriate
+- Sufficient text size (minimum 16px for body text)
+
+### Technical Implementation
+- Static site compatible with GitHub Pages
+- No dependency on backend systems
+- Minimal JavaScript for essential interactions
+- Progressive enhancement approach
